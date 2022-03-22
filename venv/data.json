@@ -1,0 +1,560 @@
+{
+  "response": {
+    "GeoObjectCollection": {
+      "metaDataProperty": {
+        "GeocoderResponseMetaData": {
+          "request": "димитровград",
+          "results": "10",
+          "found": "10"
+        }
+      },
+      "featureMember": [
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Россия, Ульяновская область, Димитровград",
+                "kind": "locality",
+                "Address": {
+                  "country_code": "RU",
+                  "formatted": "Россия, Ульяновская область, Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Россия"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Приволжский федеральный округ"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Ульяновская область"
+                    },
+                    {
+                      "kind": "area",
+                      "name": "городской округ Димитровград"
+                    },
+                    {
+                      "kind": "locality",
+                      "name": "Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Россия, Ульяновская область, Димитровград",
+                    "CountryNameCode": "RU",
+                    "CountryName": "Россия",
+                    "AdministrativeArea": {
+                      "AdministrativeAreaName": "Ульяновская область",
+                      "SubAdministrativeArea": {
+                        "SubAdministrativeAreaName": "городской округ Димитровград",
+                        "Locality": {
+                          "LocalityName": "Димитровград"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Димитровград",
+            "description": "Ульяновская область, Россия",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "49.519217 54.17711",
+                "upperCorner": "49.695996 54.298222"
+              }
+            },
+            "Point": {
+              "pos": "49.623924 54.217515"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Болгария, область Хасково, Димитровград, город Димитровград",
+                "kind": "locality",
+                "Address": {
+                  "country_code": "BG",
+                  "formatted": "Болгария, область Хасково, Димитровград, город Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Болгария"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "область Хасково"
+                    },
+                    {
+                      "kind": "area",
+                      "name": "Димитровград"
+                    },
+                    {
+                      "kind": "locality",
+                      "name": "город Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Болгария, область Хасково, Димитровград, город Димитровград",
+                    "CountryNameCode": "BG",
+                    "CountryName": "Болгария",
+                    "AdministrativeArea": {
+                      "AdministrativeAreaName": "область Хасково",
+                      "SubAdministrativeArea": {
+                        "SubAdministrativeAreaName": "Димитровград",
+                        "Locality": {
+                          "LocalityName": "город Димитровград"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "name": "город Димитровград",
+            "description": "Димитровград, область Хасково, Болгария",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "25.570616 42.039123",
+                "upperCorner": "25.647108 42.071512"
+              }
+            },
+            "Point": {
+              "pos": "25.607645 42.050378"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Болгария, область Хасково, Димитровград",
+                "kind": "area",
+                "Address": {
+                  "country_code": "BG",
+                  "formatted": "Болгария, область Хасково, Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Болгария"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "область Хасково"
+                    },
+                    {
+                      "kind": "area",
+                      "name": "Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Болгария, область Хасково, Димитровград",
+                    "CountryNameCode": "BG",
+                    "CountryName": "Болгария",
+                    "AdministrativeArea": {
+                      "AdministrativeAreaName": "область Хасково",
+                      "SubAdministrativeArea": {
+                        "SubAdministrativeAreaName": "Димитровград"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Димитровград",
+            "description": "область Хасково, Болгария",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "25.297816 41.976453",
+                "upperCorner": "25.782673 42.200462"
+              }
+            },
+            "Point": {
+              "pos": "25.595976 42.05544"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Сербия, городское населье Димитровград",
+                "kind": "district",
+                "Address": {
+                  "country_code": "RS",
+                  "formatted": "Сербия, городское населье Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Сербия"
+                    },
+                    {
+                      "kind": "district",
+                      "name": "городское населье Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Сербия, городское населье Димитровград",
+                    "CountryNameCode": "RS",
+                    "CountryName": "Сербия",
+                    "Country": {
+                      "Locality": {}
+                    }
+                  }
+                }
+              }
+            },
+            "name": "городское населье Димитровград",
+            "description": "Сербия",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "22.755198 43.009732",
+                "upperCorner": "22.796628 43.031761"
+              }
+            },
+            "Point": {
+              "pos": "22.781365 43.018183"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Сербия, городское населье Димитровград, Димитровград",
+                "kind": "railway_station",
+                "Address": {
+                  "country_code": "RS",
+                  "formatted": "Сербия, городское населье Димитровград, Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Сербия"
+                    },
+                    {
+                      "kind": "district",
+                      "name": "городское населье Димитровград"
+                    },
+                    {
+                      "kind": "railway_station",
+                      "name": "Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Сербия, городское населье Димитровград, Димитровград",
+                    "CountryNameCode": "RS",
+                    "CountryName": "Сербия",
+                    "Country": {
+                      "Locality": {}
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Димитровград",
+            "description": "городское населье Димитровград, Сербия",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "22.75659 43.005071",
+                "upperCorner": "22.773047 43.017149"
+              }
+            },
+            "Point": {
+              "pos": "22.764818 43.01111"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Россия, Куйбышевская железная дорога, станция Димитровград",
+                "kind": "railway_station",
+                "Address": {
+                  "country_code": "RU",
+                  "formatted": "Россия, Куйбышевская железная дорога, станция Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Россия"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Приволжский федеральный округ"
+                    },
+                    {
+                      "kind": "route",
+                      "name": "Куйбышевская железная дорога"
+                    },
+                    {
+                      "kind": "railway_station",
+                      "name": "станция Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Россия, Куйбышевская железная дорога, станция Димитровград",
+                    "CountryNameCode": "RU",
+                    "CountryName": "Россия",
+                    "Country": {
+                      "Locality": {}
+                    }
+                  }
+                }
+              }
+            },
+            "name": "станция Димитровград",
+            "description": "Куйбышевская железная дорога, Россия",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "49.592825 54.221053",
+                "upperCorner": "49.609282 54.230696"
+              }
+            },
+            "Point": {
+              "pos": "49.601053 54.225875"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Болгария, Главная железнодорожная линия 1, Спирка-Димитровград",
+                "kind": "railway_station",
+                "Address": {
+                  "country_code": "BG",
+                  "formatted": "Болгария, Главная железнодорожная линия 1, Спирка-Димитровград",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Болгария"
+                    },
+                    {
+                      "kind": "route",
+                      "name": "Главная железнодорожная линия 1"
+                    },
+                    {
+                      "kind": "railway_station",
+                      "name": "Спирка-Димитровград"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Болгария, Главная железнодорожная линия 1, Спирка-Димитровград",
+                    "CountryNameCode": "BG",
+                    "CountryName": "Болгария",
+                    "Country": {
+                      "Locality": {}
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Спирка-Димитровград",
+            "description": "Главная железнодорожная линия 1, Болгария",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "25.584576 42.048638",
+                "upperCorner": "25.601033 42.060903"
+              }
+            },
+            "Point": {
+              "pos": "25.592805 42.05477"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "other",
+                "text": "Болгария, Главная железнодорожная линия 4, Димитровград-Север",
+                "kind": "railway_station",
+                "Address": {
+                  "country_code": "BG",
+                  "formatted": "Болгария, Главная железнодорожная линия 4, Димитровград-Север",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Болгария"
+                    },
+                    {
+                      "kind": "route",
+                      "name": "Главная железнодорожная линия 4"
+                    },
+                    {
+                      "kind": "railway_station",
+                      "name": "Димитровград-Север"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Болгария, Главная железнодорожная линия 4, Димитровград-Север",
+                    "CountryNameCode": "BG",
+                    "CountryName": "Болгария",
+                    "Country": {
+                      "Locality": {}
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Димитровград-Север",
+            "description": "Главная железнодорожная линия 4, Болгария",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "25.565325 42.065026",
+                "upperCorner": "25.581782 42.077288"
+              }
+            },
+            "Point": {
+              "pos": "25.573554 42.071157"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "street",
+                "text": "Россия, Ульяновская область, 73-222ОПМЗН-028",
+                "kind": "street",
+                "Address": {
+                  "country_code": "RU",
+                  "formatted": "Россия, Ульяновская область, 73-222ОПМЗН-028",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Россия"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Приволжский федеральный округ"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Ульяновская область"
+                    },
+                    {
+                      "kind": "street",
+                      "name": "73-222ОПМЗН-028"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Россия, Ульяновская область, 73-222ОПМЗН-028",
+                    "CountryNameCode": "RU",
+                    "CountryName": "Россия",
+                    "AdministrativeArea": {
+                      "AdministrativeAreaName": "Ульяновская область",
+                      "Locality": {
+                        "Thoroughfare": {
+                          "ThoroughfareName": "73-222ОПМЗН-028"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "name": "73-222ОПМЗН-028",
+            "description": "Ульяновская область, Россия",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "49.446148 54.164487",
+                "upperCorner": "49.851558 54.22668"
+              }
+            },
+            "Point": {
+              "pos": "49.654341 54.186368"
+            }
+          }
+        },
+        {
+          "GeoObject": {
+            "metaDataProperty": {
+              "GeocoderMetaData": {
+                "precision": "street",
+                "text": "Россия, Самарская область, 36Н-577",
+                "kind": "street",
+                "Address": {
+                  "country_code": "RU",
+                  "formatted": "Россия, Самарская область, 36Н-577",
+                  "Components": [
+                    {
+                      "kind": "country",
+                      "name": "Россия"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Приволжский федеральный округ"
+                    },
+                    {
+                      "kind": "province",
+                      "name": "Самарская область"
+                    },
+                    {
+                      "kind": "street",
+                      "name": "36Н-577"
+                    }
+                  ]
+                },
+                "AddressDetails": {
+                  "Country": {
+                    "AddressLine": "Россия, Самарская область, 36Н-577",
+                    "CountryNameCode": "RU",
+                    "CountryName": "Россия",
+                    "AdministrativeArea": {
+                      "AdministrativeAreaName": "Самарская область",
+                      "Locality": {
+                        "Thoroughfare": {
+                          "ThoroughfareName": "36Н-577"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "name": "36Н-577",
+            "description": "Самарская область, Россия",
+            "boundedBy": {
+              "Envelope": {
+                "lowerCorner": "49.677455 53.643402",
+                "upperCorner": "49.691999 53.647742"
+              }
+            },
+            "Point": {
+              "pos": "49.684516 53.646381"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
