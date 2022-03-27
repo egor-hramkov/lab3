@@ -134,3 +134,16 @@ footer ul li {
     margin-right: 50px;
     list-style-type: none;
 }
+.display-4 {
+    width: 900px;
+}
+a {
+    text-decoration: none;
+    color: black;
+   }
+a:visited {
+    color: black; /* Цвет посещенных ссылок */
+}
+a:active {
+    color: black; /* Цвет активных ссылок */
+}

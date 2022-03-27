@@ -13,11 +13,10 @@
                         <img src="{{ url_for('static', filename = 'photos/'+user[7]) }}"/>
                         <h3>{{user[0]}} {{user[1]}}</h3>
                         <p>{{user[2]}}</p>
-                        <p>{{user[3]}}</p>
+                        <p>Возраст: {{user[3]}}</p>
                       </div>
               {% endfor %}
               </div>
-
 
     <div class="pagination">
         <a href="/users?page=0">&laquo;</a>

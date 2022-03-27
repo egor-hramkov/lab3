@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, request, send_from_directory, g
+from flask import Flask, url_for, render_template, request, send_from_directory, g, abort
 from werkzeug.utils import redirect, secure_filename
 from werkzeug.security import generate_password_hash
 import requests
@@ -88,6 +88,8 @@ def users():
     remainder = 0
     all_users = dbase.getAllUsers()
     pgcount = len(all_users) // 4 + 1
+    if curr_page >= pgcount:
+        abort(404)
     if pgcount % 4 > 0:
         remainder = len(all_users) % 4
     class pgstore:
@@ -102,6 +104,12 @@ def users():
     return render_template('users.html', users=a, curr_page=curr_page, pagecount=pgcount)
 
 
+@app.errorhandler(404)
+@app.errorhandler(403)
+@app.errorhandler(410)
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('404.html')
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
