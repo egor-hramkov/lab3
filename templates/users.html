@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block head %}
+        <title>Список пользователей</title>
+{% endblock %}
+
+{% block body %}
+
+            <div class="table-box">
+                {% for user in users %}
+                      <div class="for_users">
+
+                        <img src="{{ url_for('static', filename = 'photos/'+user[7]) }}"/>
+                        <h3>{{user[0]}} {{user[1]}}</h3>
+                        <p>{{user[2]}}</p>
+                        <p>{{user[3]}}</p>
+                      </div>
+              {% endfor %}
+              </div>
+
+
+    <div class="pagination">
+        <a href="/users?page=0">&laquo;</a>
+        {% for page in range(pagecount) %}
+            <a href="/users?page={{ page }}">{{ page + 1 }}</a>
+        {% endfor %}
+        <a href="/users?page={{pagecount - 1}}">&raquo;</a>
+    </div>
+
+    {% endblock %}
