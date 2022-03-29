@@ -1,12 +1,16 @@
-from flask import Flask, url_for, render_template, request, send_from_directory, g, abort
+from flask import Flask, url_for, render_template, request, send_from_directory, g, abort, flash, session
+from flask_session import Session
 from werkzeug.utils import redirect, secure_filename
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 import requests
 import sqlite3
 import os
 import uuid
-
+import loginform
+from flask_login import LoginManager, login_user
 from FDataBase import FDataBase
+from UserLogin import UserLogin
+
 
 
 def allowed_file(filename):
@@ -22,8 +26,11 @@ SECRET_KEY = '&8\xa2|\x11\x0f\xcf\xe8\xc2\xa6\x85"\xfd~\x0c#\x06{>T\xb7\xe9\xd8\
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config.from_object(__name__)
-
 app.config.update(dict(DATABASE=os.path.join(app.root_path, 'flsite.db')))
+app.config['SESSION_PEMANENT'] = False
+app.config['SESSION_TYPE'] = "filesystem"
+Session(app)
+login_manager = LoginManager(app)
 
 def connect_db():
     conn = sqlite3.connect(app.config['DATABASE'])
@@ -75,7 +82,6 @@ def register():
 
 @app.route('/uploads/<name>')
 def download_file(name):
-    #return send_from_directory(app.config["UPLOAD_FOLDER"], name)
     redirect(url_for('users')+'?page=1')
 
 @app.route('/users/')
@@ -83,12 +89,18 @@ def users():
     db = get_db()
     dbase = FDataBase(db)
 
+
+    # administered_users = ['admin']
+    # administered_users.append(session['login'])
+
     curr_page = int(request.args.get('page'))
     pgcount = 1
     remainder = 0
     all_users = dbase.getAllUsers()
-    pgcount = len(all_users) // 4 + 1
-    if curr_page >= pgcount:
+    pgcount = len(all_users) // 4
+    if pgcount == 0:
+        pgcount = 1
+    if curr_page > pgcount:
         abort(404)
     if pgcount % 4 > 0:
         remainder = len(all_users) % 4
@@ -102,6 +114,36 @@ def users():
         case _:
             a = all_users[curr_page * 4:curr_page * 4 + 4]
     return render_template('users.html', users=a, curr_page=curr_page, pagecount=pgcount)
+
+@login_manager.user_loader
+def load_user(user_id):
+    db = get_db()
+    dbase = FDataBase(db)
+    return UserLogin().fromDB(user_id, dbase)
+
+@app.route('/auth/', methods=['POST', 'GET'])
+def auth():
+
+    db = get_db()
+    dbase = FDataBase(db)
+    form1 = loginform.LoginForm()
+    if request.method == 'POST':
+        user = dbase.getUserByEmail(request.form.get('username'))
+        if user and check_password_hash(user['password'], request.form.get('password')):
+            userlogin = UserLogin().create(user)
+            login_user(userlogin)
+            session['login'] = userlogin.get_login()
+
+            return redirect(url_for('users')+'?page=0')
+        flash("Неверный логин/пароль")
+        return render_template('auth.html', form=form1, user=user)
+    else:
+        if request.args.get('avt') is not None:
+            session.pop('login')
+        if 'login' in session:
+            return render_template('auth.html', form=form1, user=session['login'])
+        return render_template('auth.html', form=form1)
+
 
 
 @app.errorhandler(404)

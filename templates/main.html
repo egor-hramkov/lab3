@@ -22,7 +22,12 @@
                 <li>Магазин</li>
                 <li><a href="../registration/">Регистрация</a></li>
               </ul>
-              <h3>Войти</h3>
+                {% if 'login' in session %}
+                    <a href="../auth/"><h3>Вход выполнен</h3></a>
+                {% else %}
+                    <a href="../auth/"><h3>Войти</h3></a>
+                {% endif %}
+
             </header>
     {% block body %}{% endblock %}
               <footer>

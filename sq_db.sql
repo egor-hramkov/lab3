@@ -7,5 +7,6 @@ age integer NOT NULL,
 worked text NOT NULL,
 post text NOT NULL,
 password text NOT NULL,
-photo string128 NOT NULL
+photo string128 NOT NULL,
+role text NOT NULL
 );

@@ -147,3 +147,17 @@ a:visited {
 a:active {
     color: black; /* Цвет активных ссылок */
 }
+.flash{
+    font-size: 20px;
+    color: red;
+}
+.vhod{
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto
+}
