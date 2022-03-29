@@ -13,6 +13,11 @@ class FDataBase:
             if res:
                 print("Пользователь с таким email уже существует")
                 return False
+            self.__cur.execute(f"SELECT name FROM users WHERE name LIKE 'admin'")
+            res = self.__cur.fetchone()
+            if res:
+                print("Не пытайтесь зарегистрировать еще одного админа")
+                return False
             if name == 'admin':
                 self.__cur.execute("INSERT INTO users VALUES(NULL,?, ?, ?, ?, ?, ?, ?, ?, ?)",
                                    (name, surname, email, age, work, position, password, photo, 'Админ'))

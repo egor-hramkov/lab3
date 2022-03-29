@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block head %}
+        <title>Список пользователей</title>
+{% endblock %}
+{% block body %}
+        <div class="for_users">
+                        <img src="{{ url_for('static', filename = 'photos/'+user[8]) }}"/>
+                        <input type="text" value="{{user[1]}}" class="edit_text" {% if user[0] == id_sess %} readonly="True" {% endif %}>
+                        <input type="text" value="{{user[2]}}" class="edit_text">
+                        <input type="text" value="{{user[3]}}" class="edit_text">
+            <div class="input_age">
+                        <label>Возраст:</label>
+                        <input type="text" value="{{user[4]}}" class="edit_text">
+            </div>
+        </div>
+{% endblock %}

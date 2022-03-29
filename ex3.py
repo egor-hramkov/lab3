@@ -88,10 +88,11 @@ def download_file(name):
 def users():
     db = get_db()
     dbase = FDataBase(db)
-
-
+    authorized = ""
     # administered_users = ['admin']
     # administered_users.append(session['login'])
+    if 'login' in session:
+        authorized = session['login']
 
     curr_page = int(request.args.get('page'))
     pgcount = 1
@@ -113,7 +114,7 @@ def users():
             a = all_users[pgcount - 1:remainder]
         case _:
             a = all_users[curr_page * 4:curr_page * 4 + 4]
-    return render_template('users.html', users=a, curr_page=curr_page, pagecount=pgcount)
+    return render_template('users.html', users=a, curr_page=curr_page, pagecount=pgcount, is_auth=authorized.split(), id_sess=session['_user_id'])
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -123,7 +124,6 @@ def load_user(user_id):
 
 @app.route('/auth/', methods=['POST', 'GET'])
 def auth():
-
     db = get_db()
     dbase = FDataBase(db)
     form1 = loginform.LoginForm()
@@ -133,7 +133,6 @@ def auth():
             userlogin = UserLogin().create(user)
             login_user(userlogin)
             session['login'] = userlogin.get_login()
-
             return redirect(url_for('users')+'?page=0')
         flash("Неверный логин/пароль")
         return render_template('auth.html', form=form1, user=user)
@@ -144,6 +143,16 @@ def auth():
             return render_template('auth.html', form=form1, user=session['login'])
         return render_template('auth.html', form=form1)
 
+@app.route('/account/')
+def account():
+    form1 = loginform.LoginForm()
+    if 'login' in session:
+        db = get_db()
+        dbase = FDataBase(db)
+        user = dbase.getUserByEmail(request.args.get('user'))
+        return render_template('account.html', user=user, id_sess=session['_user_id'])
+    else:
+        return render_template('auth.html', form=form1)
 
 
 @app.errorhandler(404)

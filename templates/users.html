@@ -9,9 +9,8 @@
             <div class="table-box">
                 {% for user in users %}
                       <div class="for_users">
-
                         <img src="{{ url_for('static', filename = 'photos/'+user[7]) }}"/>
-                        <h3>{{user[0]}} {{user[1]}}</h3>
+                        <a onclick="location.href='../account/?user={{user[2]}}';"><h3>{{user[0]}} {{user[1]}}</h3></a>
                         <p>{{user[2]}}</p>
                         <p>Возраст: {{user[3]}}</p>
                       </div>
