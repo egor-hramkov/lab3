@@ -18,7 +18,7 @@ def index():
 def city_map(city='Ульяновск'):
     data = []
     message = ''
-    path_png = 'img/map.png'
+    path_png = 'map2.png'
     params_query = {
         'apikey': '46b49608-1968-44d4-b854-b9fbfcc115ae',
         'geocode': '',
@@ -45,7 +45,7 @@ def city_map(city='Ульяновск'):
         params_query_2['ll'] = atitude[0] + ','
         params_query_2['ll'] += atitude[1]
         resp = requests.get(host2, params=params_query_2)
-        with open('static/img/map.png', mode='wb') as f:
+        with open('map2.png', mode='wb') as f:
             f.write(resp.content)
     else:
         city = '-'

@@ -73,11 +73,18 @@ def register():
 
             db = get_db()
             dbase = FDataBase(db)
-            dbase.adduser(request.form.get('named'), request.form.get('surname'), request.form.get('email'),
+            is_reg = dbase.adduser(request.form.get('named'), request.form.get('surname'), request.form.get('email'),
                           request.form.get('age'),
                           request.form.get('work'), request.form.get('position'),
                           generate_password_hash(request.form.get('password')), filename2db)
-            return redirect(url_for('users')+'?page=0')
+            if is_reg == "Error 1":
+                flash("Пользователь с таким email уже существует")
+                return redirect(url_for('register'))
+            if is_reg == "Error 2":
+                flash("Не пытайтесь зарегистрировать еще одного админа")
+                return redirect(url_for('register'))
+            if is_reg == True:
+                return redirect(url_for('users')+'?page=0')
 
 
 @app.route('/uploads/<name>')
@@ -86,11 +93,11 @@ def download_file(name):
 
 @app.route('/users/')
 def users():
+
     db = get_db()
     dbase = FDataBase(db)
     authorized = ""
-    # administered_users = ['admin']
-    # administered_users.append(session['login'])
+
     if 'login' in session:
         authorized = session['login']
 
@@ -98,7 +105,7 @@ def users():
     pgcount = 1
     remainder = 0
     all_users = dbase.getAllUsers()
-    pgcount = len(all_users) // 4
+    pgcount = len(all_users) // 4 + 1
     if pgcount == 0:
         pgcount = 1
     if curr_page > pgcount:
@@ -143,14 +150,27 @@ def auth():
             return render_template('auth.html', form=form1, user=session['login'])
         return render_template('auth.html', form=form1)
 
-@app.route('/account/')
+@app.route('/account/', methods=['POST', 'GET'])
 def account():
+    is_adm = False
+    db = get_db()
+    dbase = FDataBase(db)
+    if request.method == 'POST':
+        id_us = dbase.getUserByEmail((request.form.get('mail')))
+        dbase.updateUser(id_us[0], request.form.get('names'), request.form.get('surname'), request.form.get('mail'),
+                          request.form.get('age'),
+                          request.form.get('work'), request.form.get('post'))
+        db.commit()
+        return redirect(url_for('users') + '?page=0')
     form1 = loginform.LoginForm()
     if 'login' in session:
-        db = get_db()
-        dbase = FDataBase(db)
         user = dbase.getUserByEmail(request.args.get('user'))
-        return render_template('account.html', user=user, id_sess=session['_user_id'])
+        if user:
+            if(dbase.getUser(session['_user_id'])[9] == 'Админ'):
+                is_adm = True
+            return render_template('account.html', user=user, id_sess=session['_user_id'], is_adm=is_adm)
+        else:
+            abort(404)
     else:
         return render_template('auth.html', form=form1)
 
