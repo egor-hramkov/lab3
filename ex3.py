@@ -97,7 +97,7 @@ def users():
     db = get_db()
     dbase = FDataBase(db)
     authorized = ""
-
+    id_sess = ""
     if 'login' in session:
         authorized = session['login']
 
@@ -121,7 +121,11 @@ def users():
             a = all_users[pgcount - 1:remainder]
         case _:
             a = all_users[curr_page * 4:curr_page * 4 + 4]
-    return render_template('users.html', users=a, curr_page=curr_page, pagecount=pgcount, is_auth=authorized.split(), id_sess=session['_user_id'])
+    try:
+        id_sess = session['_user_id']
+    except:
+        pass
+    return render_template('users.html', users=a, curr_page=curr_page, pagecount=pgcount, is_auth=authorized.split(), id_sess=id_sess)
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -146,6 +150,7 @@ def auth():
     else:
         if request.args.get('avt') is not None:
             session.pop('login')
+            session.pop('_user_id')
         if 'login' in session:
             return render_template('auth.html', form=form1, user=session['login'])
         return render_template('auth.html', form=form1)
